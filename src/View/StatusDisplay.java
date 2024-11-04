@@ -1,9 +1,11 @@
+package View;
+
 import javax.swing.*;
 
 public class StatusDisplay extends JPanel{
 
     private JTextField misses;
-    private JTextField hits;
+    private JTextField strikes;
     private JTextField totalMisses;
     private JTextField totalHits;
 
@@ -13,24 +15,24 @@ public class StatusDisplay extends JPanel{
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
         misses = new JTextField("Misses: 0");
-        hits = new JTextField("Hits: 0");
+        strikes = new JTextField("Strikes: 0");
         totalMisses = new JTextField("Total Misses: 0");
         totalHits = new JTextField("Total Hits: 0");
 
         misses.setEditable(false);
-        hits.setEditable(false);
+        strikes.setEditable(false);
         totalMisses.setEditable(false);
         totalHits.setEditable(false);
 
         add(misses);
-        add(hits);
+        add(strikes);
         add(totalMisses);
         add(totalHits);
     }
 
-    public void updateStatus(int misses, int hits, int totalMisses, int totalHits) {
+    public void updateStatus(int misses, int strikes, int totalMisses, int totalHits) {
         updateMisses(misses);
-        updateHits(hits);
+        updateStrikes(strikes);
         updateTotalMisses(totalMisses);
         updateTotalHits(totalHits);
     }
@@ -39,8 +41,8 @@ public class StatusDisplay extends JPanel{
         this.misses.setText("Misses: " + misses);
     }
 
-    private void updateHits(int hits) {
-        this.hits.setText("Hits: " + hits);
+    private void updateStrikes(int strikes) {
+        this.strikes.setText("Strikes: " + strikes);
     }
 
     private void updateTotalMisses(int totalMisses) {

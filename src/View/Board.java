@@ -1,3 +1,5 @@
+package View;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -16,6 +18,8 @@ public class Board extends JPanel {
         for (int row = 0; row<ROW; row++) {
             for (int col = 0; col<COL; col++) {
                 Space space = new Space(row, col);
+                space.setText("~");
+                space.setForeground(Color.BLUE);
                 board[row][col] = space;
                 add(space);
             }
@@ -30,8 +34,8 @@ public class Board extends JPanel {
     public void resetBoard() {
         for (int row = 0; row<ROW; row++) {
             for (int col = 0; col<COL; col++) {
-                board[row][col].setText("");
-                board[row][col].setForeground(Color.BLACK);
+                board[row][col].setText("~");
+                board[row][col].setForeground(Color.BLUE);
             }
         }
     }

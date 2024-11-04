@@ -1,3 +1,5 @@
+package View;
+
 import javax.swing.*;
 
 public class Space extends JButton {
@@ -8,6 +10,7 @@ public class Space extends JButton {
         super();
         this.row = row;
         this.col = col;
+        this.setPreferredSize(new java.awt.Dimension(50, 50));
     }
 
     public int getRow() {
